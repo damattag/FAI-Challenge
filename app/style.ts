@@ -6,7 +6,7 @@ export const CitiLogo = styled(citi)``;
 export const Container = styled.View`
   display: flex;
   flex: 1;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: ${({ theme }) => theme.colors.light_background};
   align-items: center;
   justify-content: center;
   gap: 8px;
