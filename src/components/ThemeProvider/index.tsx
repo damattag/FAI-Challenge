@@ -10,7 +10,7 @@ interface ThemeProviderViewProps {
   children: React.ReactNode;
 }
 
-export default function ThemeProviderView({ children } : ThemeProviderViewProps) {
+export default function ThemeProviderView({ children }: ThemeProviderViewProps) {
   const insets = useSafeAreaInsets();
 
   return (
@@ -21,12 +21,12 @@ export default function ThemeProviderView({ children } : ThemeProviderViewProps)
         paddingBottom: insets.bottom,
         paddingLeft: insets.left,
         paddingRight: insets.right,
-        backgroundColor: `${theme.colors.background}`,
+        backgroundColor: `${theme.colors.light_background}`,
       }}
       >
         <StatusBar
           style="dark"
-          backgroundColor={theme.colors.background}
+          backgroundColor="transparent"
         />
         {children}
       </View>

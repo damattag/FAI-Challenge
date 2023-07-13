@@ -1,3 +1,4 @@
+import { Header } from '@components';
 import { Container, Hello, Title } from './styles';
 
 interface HomeProps {
@@ -7,7 +8,12 @@ interface HomeProps {
 export default function Home({ username }: HomeProps) {
   return (
     <Container>
-      <Hello>{username}</Hello>
+      <Header />
+      <Hello>
+        Olá
+        {' '}
+        {username}
+      </Hello>
       <Title>Suas próximas partidas</Title>
     </Container>
   );

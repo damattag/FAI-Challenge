@@ -9,7 +9,7 @@ export const Hello = styled.Text`
 `;
 
 export const Title = styled.Text`
-  font: ${({ theme }) => theme.fonts.medium};
+  font-family: ${({ theme }) => theme.fonts.medium};
   font-size: ${({ theme }) => theme.fontSize.large};
   color: ${({ theme }) => theme.colors.black};
 `;
