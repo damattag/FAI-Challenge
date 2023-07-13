@@ -6,6 +6,8 @@ export default {
     green_20: '#51E67833',
     purple: '#6800E4',
     purple_20: '#6800E433',
+    red: '#EA394A',
+    red_20: '#EA394A33',
     gray: '#D9D9D9',
     dark_gray: '#454545',
     white: '#FFFFFF',

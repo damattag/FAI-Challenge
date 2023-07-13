@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import {
-  Container, Date, Icon, Length, Plataform, Title,
+  Container, Icon, Content, Title, ConfirmButton,
 } from './styles';
 
 interface MatchCardProps {
@@ -15,24 +15,21 @@ export default function MatchCard({
 }: MatchCardProps) {
   const [confirm, setConfirm] = useState(false);
 
-  function handleConfirm() {
-    setConfirm(!confirm);
-  }
-
   return (
     <Container isConfirmed={confirm}>
+      <ConfirmButton isConfirmed={confirm} onPress={() => setConfirm(!confirm)} />
       <Title>
         {title}
       </Title>
-      <Plataform>
+      <Content>
         {plataform}
-      </Plataform>
-      <Date>
+      </Content>
+      <Content>
         {date}
-      </Date>
-      <Length>
+      </Content>
+      <Content>
         {length}
-      </Length>
+      </Content>
       <Icon />
     </Container>
   );

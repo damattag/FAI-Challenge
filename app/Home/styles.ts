@@ -2,10 +2,18 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
   flex: 1;
+
+  padding: 0 20px;
+
   background-color: ${({ theme }) => theme.colors.light_background};
 `;
 
 export const Hello = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.light};
+  font-size: ${({ theme }) => theme.fontSize.medium};
+  color: ${({ theme }) => theme.colors.black};
+
+  margin-bottom: 10px;
 `;
 
 export const Title = styled.Text`
