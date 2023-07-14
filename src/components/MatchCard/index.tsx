@@ -1,6 +1,16 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { Ionicons, Feather } from '@expo/vector-icons';
 import {
-  Container, Icon, Content, Title, ConfirmButton,
+  Container,
+  Icon,
+  Date,
+  Title,
+  ConfirmButton,
+  Plataform,
+  Length,
+  LeftContainer,
+  RightContainer,
+  PeopleContainer,
 } from './styles';
 
 interface MatchCardProps {
@@ -17,20 +27,32 @@ export default function MatchCard({
 
   return (
     <Container isConfirmed={confirm}>
-      <ConfirmButton isConfirmed={confirm} onPress={() => setConfirm(!confirm)} />
-      <Title>
-        {title}
-      </Title>
-      <Content>
-        {plataform}
-      </Content>
-      <Content>
-        {date}
-      </Content>
-      <Content>
-        {length}
-      </Content>
-      <Icon />
+      <LeftContainer>
+        <Title>
+          {title}
+        </Title>
+        <Plataform>
+          {plataform}
+        </Plataform>
+        <Date>
+          {date}
+        </Date>
+      </LeftContainer>
+      <RightContainer>
+        <ConfirmButton isConfirmed={confirm} onPress={() => setConfirm(!confirm)}>
+          {confirm ? (
+            <Feather name="x" size={18} color="black" />
+          ) : (
+            <Ionicons name="checkmark-sharp" size={18} color="black" />
+          )}
+        </ConfirmButton>
+        <PeopleContainer>
+          <Length>
+            {length}
+          </Length>
+          <Icon />
+        </PeopleContainer>
+      </RightContainer>
     </Container>
   );
 }
