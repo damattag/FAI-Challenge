@@ -5,6 +5,7 @@ import GameIcon from './game.svg';
 import ActiveHomeIcon from './homeActive.svg';
 import ActiveProfileIcon from './profileActive.svg';
 import ActiveGameIcon from './gameActive.svg';
+import OnlineGame from './onlineGame.svg';
 
 export {
   PeopleIcon,
@@ -14,4 +15,5 @@ export {
   ActiveHomeIcon,
   ActiveProfileIcon,
   ActiveGameIcon,
+  OnlineGame,
 };

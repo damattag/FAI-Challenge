@@ -16,6 +16,7 @@ export const Container = styled.View`
 
   align-self: auto;
 
+  margin-bottom: 10px;
   padding: 8px 16px;
 
   background-color: ${({ isConfirmed }: MatchCardStyleProps) => (isConfirmed ? theme.colors.green_20 : theme.colors.purple_20)};

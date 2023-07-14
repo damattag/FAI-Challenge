@@ -1,4 +1,6 @@
-import { Header, MatchCard, Navbar } from '@components';
+import {
+  EmptyHomeList, Header, MatchCard, Navbar,
+} from '@components';
 import { FlatList } from 'react-native';
 import {
   Container, Hello, Title, Content,
@@ -9,6 +11,58 @@ interface HomeProps {
 }
 
 export default function Home({ username }: HomeProps) {
+  const data = [
+    {
+      id: '1',
+      title: 'Title',
+      plataform: 'Discord',
+      date: 'Amanhã às 20:00',
+      length: 0,
+    },
+    {
+      id: '2',
+      title: 'ai',
+      plataform: 'Discord',
+      date: 'Amanhã às 20:00',
+      length: 0,
+    },
+    {
+      id: '3',
+      title: 'Title',
+      plataform: 'Discord',
+      date: 'Amanhã às 20:00',
+      length: 0,
+    },
+    {
+      id: '4',
+      title: 'Title',
+      plataform: 'Discord',
+      date: 'Amanhã às 20:00',
+      length: 0,
+    },
+    {
+      id: '5',
+      title: 'Title',
+      plataform: 'Discord',
+      date: 'Amanhã às 20:00',
+      length: 0,
+    },
+    {
+      id: '6',
+      title: 'Title',
+      plataform: 'Discord',
+      date: 'Amanhã às 20:00',
+      length: 0,
+    },
+    {
+      id: '7',
+      title: 'Title',
+      plataform: 'Discord',
+      date: 'Amanhã às 20:00',
+      length: 0,
+    },
+  ];
+
   return (
     <Container>
       <Header />
@@ -22,15 +76,16 @@ export default function Home({ username }: HomeProps) {
         <Title>Suas próximas partidas</Title>
 
         <FlatList
-          style={{ paddingTop: 20 }}
-          data={[{ id: '1' }]}
+          style={{ marginTop: 20, marginBottom: 20 }}
+          showsVerticalScrollIndicator={false}
+          data={data}
           keyExtractor={(item) => item.id}
-          renderItem={() => (
+          renderItem={({ item }) => (
             <MatchCard
-              title="Title"
-              plataform="Discord"
-              date="Amanhã às 20:00"
-              length={0}
+              title={item.title}
+              plataform={item.plataform}
+              date={item.date}
+              length={item.length}
             />
           )}
         />
