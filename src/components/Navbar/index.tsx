@@ -14,10 +14,6 @@ interface NavbarProps {
 export default function Navbar({ page }: NavbarProps) {
   const router = useRouter();
 
-  function handleNavigate() {
-    router.push(`/${page}`);
-  }
-
   return (
     <Container style={{
       shadowColor: '#000',
@@ -31,7 +27,7 @@ export default function Navbar({ page }: NavbarProps) {
     }}
     >
       <Menu>
-        <MenuItems onPress={() => handleNavigate()}>
+        <MenuItems onPress={() => router.push('/games')}>
           {page === 'game' ? (
             <>
               <ActiveGameButton />
@@ -41,7 +37,7 @@ export default function Navbar({ page }: NavbarProps) {
             <GameButton />
           )}
         </MenuItems>
-        <MenuItems onPress={() => handleNavigate()}>
+        <MenuItems onPress={() => router.push('/home')}>
           {page === 'home' ? (
             <>
               <ActiveHomeButton />
@@ -51,7 +47,7 @@ export default function Navbar({ page }: NavbarProps) {
             <HomeButton />
           )}
         </MenuItems>
-        <MenuItems onPress={() => handleNavigate()}>
+        <MenuItems onPress={() => router.push('/profile')}>
           {page === 'profile' ? (
             <>
               <ActiveProfileButton />

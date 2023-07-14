@@ -1,5 +1,5 @@
 import { ThemeProvider } from '@components';
-import { Slot, SplashScreen } from 'expo-router';
+import { SplashScreen, Stack } from 'expo-router';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useFonts } from 'expo-font';
 import {
@@ -21,7 +21,14 @@ export default function Layout() {
   return (
     <SafeAreaProvider>
       <ThemeProvider>
-        <Slot />
+        <Stack screenOptions={{
+          headerShown: false,
+          animation: 'none',
+        }}
+        >
+          <Stack.Screen name="(tabs)" />
+          <Stack.Screen name="details/index" />
+        </Stack>
       </ThemeProvider>
     </SafeAreaProvider>
   );

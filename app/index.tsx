@@ -1,8 +1,8 @@
 import React from 'react';
-import Home from './Home';
+import { Redirect } from 'expo-router';
 
 const App: React.FC = () => (
-  <Home username="damattag" />
+  <Redirect href="/home" />
 );
 
 export default App;
