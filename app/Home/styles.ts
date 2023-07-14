@@ -2,10 +2,19 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
   flex: 1;
+  align-items: flex-start;
 
-  padding: 0 20px;
+  padding: 0;
 
   background-color: ${({ theme }) => theme.colors.light_background};
+`;
+
+export const Content = styled.View`
+  flex: 1;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  padding: 0 20px;
 `;
 
 export const Hello = styled.Text`

@@ -7,12 +7,14 @@ interface MatchCardStyleProps {
 }
 
 export const Container = styled.View`
-  width: 95%;
+  width: 88%;
   height: 80px;
 
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
+  align-self: auto;
 
   padding: 8px 16px;
 
