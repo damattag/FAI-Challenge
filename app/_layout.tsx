@@ -23,11 +23,11 @@ export default function Layout() {
       <ThemeProvider>
         <Stack screenOptions={{
           headerShown: false,
-          animation: 'none',
+          animation: 'fade',
         }}
         >
           <Stack.Screen name="(tabs)" />
-          <Stack.Screen name="details/index" />
+          <Stack.Screen name="details/[id]" />
         </Stack>
       </ThemeProvider>
     </SafeAreaProvider>

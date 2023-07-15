@@ -16,6 +16,7 @@ import {
 import PopUp from '../PopUp';
 
 interface MatchCardProps {
+  id: string;
   title: string;
   plataform: string;
   date: string;
@@ -23,7 +24,7 @@ interface MatchCardProps {
 }
 
 export default function MatchCard({
-  title, plataform, date, length,
+  id, title, plataform, date, length,
 }: MatchCardProps) {
   const [confirm, setConfirm] = useState(false);
   const [showPopUp, setShowPopUp] = useState(false);
@@ -36,7 +37,7 @@ export default function MatchCard({
   }
 
   return (
-    <Container isConfirmed={confirm} activeOpacity={0.7} onPress={() => router.push('/details')}>
+    <Container isConfirmed={confirm} activeOpacity={0.7} onPress={() => router.push(`/details/${id}`)}>
       <LeftContainer>
         <Title>
           {title}
