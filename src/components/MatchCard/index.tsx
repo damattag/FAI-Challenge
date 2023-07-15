@@ -12,6 +12,7 @@ import {
   RightContainer,
   PeopleContainer,
 } from './styles';
+import PopUp from '../PopUp';
 
 interface MatchCardProps {
   title: string;
@@ -24,6 +25,12 @@ export default function MatchCard({
   title, plataform, date, length,
 }: MatchCardProps) {
   const [confirm, setConfirm] = useState(false);
+  const [showPopUp, setShowPopUp] = useState(false);
+
+  function deleteMatch() {
+    setConfirm(false);
+    setShowPopUp(false);
+  }
 
   return (
     <Container isConfirmed={confirm}>
@@ -39,7 +46,10 @@ export default function MatchCard({
         </Date>
       </LeftContainer>
       <RightContainer>
-        <ConfirmButton isConfirmed={confirm} onPress={() => setConfirm(!confirm)}>
+        <ConfirmButton
+          isConfirmed={confirm}
+          onPress={() => (confirm ? setShowPopUp(true) : setConfirm(true))}
+        >
           {confirm ? (
             <Feather name="x" size={18} color="black" />
           ) : (
@@ -53,6 +63,11 @@ export default function MatchCard({
           <Icon />
         </PeopleContainer>
       </RightContainer>
+      <PopUp
+        isVisible={showPopUp}
+        handleCancel={() => setShowPopUp(false)}
+        handleConfirm={() => deleteMatch()}
+      />
     </Container>
   );
 }
