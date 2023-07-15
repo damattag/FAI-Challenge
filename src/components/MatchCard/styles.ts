@@ -6,7 +6,7 @@ interface MatchCardStyleProps {
   isConfirmed: boolean;
 }
 
-export const Container = styled.View`
+export const Container = styled.TouchableOpacity<MatchCardStyleProps>`
   width: 88%;
   height: 80px;
 

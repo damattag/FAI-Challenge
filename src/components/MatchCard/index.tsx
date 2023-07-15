@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Ionicons, Feather } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 import {
   Container,
   Icon,
@@ -27,13 +28,15 @@ export default function MatchCard({
   const [confirm, setConfirm] = useState(false);
   const [showPopUp, setShowPopUp] = useState(false);
 
+  const router = useRouter();
+
   function deleteMatch() {
     setConfirm(false);
     setShowPopUp(false);
   }
 
   return (
-    <Container isConfirmed={confirm}>
+    <Container isConfirmed={confirm} activeOpacity={0.7} onPress={() => router.push('/details')}>
       <LeftContainer>
         <Title>
           {title}

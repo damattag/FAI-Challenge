@@ -8,6 +8,8 @@ export const Container = styled.View`
   align-self: center;
   justify-content: space-around;
 
+  top: 45%;
+
   padding: 10px;
 
   background-color: ${theme.colors.white};
