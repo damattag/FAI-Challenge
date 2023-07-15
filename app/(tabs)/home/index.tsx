@@ -1,9 +1,12 @@
 import {
-  EmptyHomeList, Header, MatchCard, Navbar,
+  Header, MatchCard,
 } from '@components';
 import { FlatList } from 'react-native';
 import {
-  Container, Hello, Title, Content,
+  Container,
+  Hello,
+  Title,
+  Content,
 } from './styles';
 
 interface HomeProps {

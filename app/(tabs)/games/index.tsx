@@ -3,7 +3,11 @@ import { FlatList } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import {
   ConnectedPeople,
-  Container, Content, PurpleCard, PurpleCardText, Title,
+  Container,
+  Content,
+  PurpleCard,
+  PurpleCardText,
+  Title,
 } from './styles';
 
 export default function Games() {
@@ -68,10 +72,10 @@ export default function Games() {
             colors={['#9B56ED', '#6800E4']}
             style={{
               flex: 1,
-              borderRadius: 8,
               flexDirection: 'row',
               alignItems: 'center',
               justifyContent: 'space-around',
+              borderRadius: 8,
               padding: 10,
             }}
           >

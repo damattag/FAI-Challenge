@@ -39,7 +39,7 @@ export const ConnectedPeople = styled(InterconnectedPeople)`
 `;
 
 export const PurpleCardText = styled.Text`
-  width: 50%;
+  width: 60%;
 
   font-family: ${({ theme }) => theme.fonts.medium};
   font-size: ${({ theme }) => theme.fontSize.medium};
