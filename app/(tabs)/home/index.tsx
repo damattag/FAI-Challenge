@@ -63,8 +63,6 @@ export default function Home({ username }: HomeProps) {
     },
   ];
 
-  const usernameA = 'damattag';
-
   return (
     <Container>
       <Header />
@@ -72,7 +70,7 @@ export default function Home({ username }: HomeProps) {
         <Hello>
           Olá,
           {' '}
-          {usernameA}
+          {username}
           !
         </Hello>
         <Title>Suas próximas partidas</Title>
