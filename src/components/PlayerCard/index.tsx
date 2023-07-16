@@ -9,7 +9,7 @@ interface PlayerCardProps {
 export default function PlayerCard({ username }: PlayerCardProps) {
   return (
     <Container>
-      <Ionicons name="person-circle-outline" size={24} color={theme.colors.blue_20} />
+      <Ionicons name="person-circle" size={40} color={theme.colors.blue} />
       <Username>
         {username}
       </Username>

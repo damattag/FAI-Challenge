@@ -1,6 +1,6 @@
 import { Container } from '../style';
 import { Header } from '@components';
-import { Card, ConfirmButton, Content, ContentText, Description, ParticipantsContainer, Title } from './styles';
+import { Card, ConfirmButton, Content, ContentText, Description, Participants, ParticipantsContainer, ParticipantsHeader, Title } from './styles';
 import { Feather, Ionicons } from '@expo/vector-icons';
 import theme from '@styles';
 import { useState } from 'react';
@@ -81,24 +81,32 @@ export default function Details() {
             />
           </Description>
         </Card>
+        <ParticipantsContainer>
+          <ParticipantsHeader>
+            <ContentText bold>
+              Participantes
+            </ContentText>
+            <Participants>
+              <ContentText>
+                {data.Length} / 10
+              </ContentText>
+              <Ionicons name="people" size={20} color={theme.colors.dark_gray} />
+            </Participants>
+          </ParticipantsHeader>
+          <FlatList
+            data={data.Participants}
+            keyExtractor={(item) => item.id.toString()}
+            renderItem={({ item }) => (
+              <PlayerCard username={item.username} />
+            )}
+          />
+        </ParticipantsContainer>
       </Content>
       <PopUp
         isVisible={showPopUp}
         handleCancel={() => setShowPopUp(false)}
         handleConfirm={() => deleteMatch()}
       />
-      <ParticipantsContainer>
-        <ContentText bold>
-          Participantes
-        </ContentText>
-        <FlatList
-          data={data.Participants}
-          keyExtractor={(item) => item.id.toString()}
-          renderItem={({ item }) => (
-            <PlayerCard username={item.username} />
-          )}
-        />
-      </ParticipantsContainer>
     </Container>
   );
 }

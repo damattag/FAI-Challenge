@@ -5,7 +5,7 @@ export const Container = styled.View`
   flex: 1;
   align-items: flex-start;
   justify-content: flex-start;
-  
+
   padding: 0;
 
   background-color: ${({ theme }) => theme.colors.light_background};
@@ -104,8 +104,19 @@ export const ParticipantsContainer = styled.View`
   width: 100%;
   height: auto;
 
-  align-items: flex-start;
-  justify-content: flex-start;
-
   margin-top: 10px;
 `; 
+
+export const ParticipantsHeader = styled.View`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+  gap: 125px;
+`;
+
+export const Participants = styled.View`
+  flex-direction: row;
+
+  gap: 10px;
+`;
