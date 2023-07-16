@@ -85,6 +85,7 @@ export default function Home({ username }: HomeProps) {
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
             <MatchCard
+              id={item.id}
               title={item.title}
               plataform={item.plataform}
               date={item.date}
