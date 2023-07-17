@@ -1,4 +1,4 @@
-import { Header, MatchCard } from '@components';
+import { EmptyHomeList, Header, MatchCard } from '@components';
 import { FlatList } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import {
@@ -9,59 +9,10 @@ import {
   PurpleCardText,
   Title,
 } from './styles';
+import rooms from '../../../src/utils/rooms';
 
 export default function Games() {
-  const data = [
-    {
-      id: '1',
-      title: 'Title',
-      plataform: 'Discord',
-      date: 'Amanhã às 20:00',
-      length: 0,
-    },
-    {
-      id: '2',
-      title: 'ai',
-      plataform: 'Discord',
-      date: 'Amanhã às 20:00',
-      length: 0,
-    },
-    {
-      id: '3',
-      title: 'Title',
-      plataform: 'Discord',
-      date: 'Amanhã às 20:00',
-      length: 0,
-    },
-    {
-      id: '4',
-      title: 'Title',
-      plataform: 'Discord',
-      date: 'Amanhã às 20:00',
-      length: 0,
-    },
-    {
-      id: '5',
-      title: 'Title',
-      plataform: 'Discord',
-      date: 'Amanhã às 20:00',
-      length: 0,
-    },
-    {
-      id: '6',
-      title: 'Title',
-      plataform: 'Discord',
-      date: 'Amanhã às 20:00',
-      length: 0,
-    },
-    {
-      id: '7',
-      title: 'Title',
-      plataform: 'Discord',
-      date: 'Amanhã às 20:00',
-      length: 0,
-    },
-  ];
+  const data = rooms;
 
   return (
     <Container>
@@ -102,7 +53,13 @@ export default function Games() {
               title={item.title}
               plataform={item.plataform}
               date={item.date}
-              length={item.length}
+              length={item.players}
+              max_length={item.max_players}
+            />
+          )}
+          ListEmptyComponent={() => (
+            <EmptyHomeList
+              section='games'
             />
           )}
         />

@@ -7,6 +7,7 @@ import ActiveProfileIcon from './profileActive.svg';
 import ActiveGameIcon from './gameActive.svg';
 import OnlineGame from './onlineGame.svg';
 import InterconnectedPeople from './interconnectedPeople.svg';
+import RobotGames from './robotGames.svg';
 
 export {
   PeopleIcon,
@@ -18,4 +19,5 @@ export {
   ActiveGameIcon,
   OnlineGame,
   InterconnectedPeople,
+  RobotGames,
 };

@@ -1,16 +1,20 @@
-import { OnlineGame } from '@icons';
+import { OnlineGame, RobotGames } from '@icons';
+import { Link } from 'expo-router';
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
   flex: 1;
+
   align-items: center;
   justify-content: center;
 
-  padding: 0 24px;
+  gap: 48px;
+
+  padding: 48px 24px;
 `;
 
 export const Message = styled.Text`
-  width: 250px;
+  width: 275px;
   height: auto;
 
   font-family: ${({ theme }) => theme.fonts.medium};
@@ -23,5 +27,12 @@ export const Message = styled.Text`
   }
 `;
 
-export const BackImage = styled(OnlineGame)`
+export const BackImageHome = styled(OnlineGame)`
+`;
+
+export const BackImageGames = styled(RobotGames)`
+`;
+
+export const Anchor = styled(Link)`
+  color: ${({ theme }) => theme.colors.purple};
 `;
