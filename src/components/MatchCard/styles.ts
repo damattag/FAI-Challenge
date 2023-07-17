@@ -4,10 +4,11 @@ import { PeopleIcon } from '@icons';
 
 interface MatchCardStyleProps {
   isConfirmed: boolean;
+  isFull: boolean;
 }
 
 export const Container = styled.TouchableOpacity<MatchCardStyleProps>`
-  width: 88%;
+  width: 88.5%;
   height: 80px;
 
   flex-direction: row;
@@ -19,7 +20,7 @@ export const Container = styled.TouchableOpacity<MatchCardStyleProps>`
   margin-bottom: 10px;
   padding: 8px 16px;
 
-  background-color: ${({ isConfirmed }: MatchCardStyleProps) => (isConfirmed ? theme.colors.green_20 : theme.colors.purple_20)};
+  background-color: ${({ isFull, isConfirmed }: MatchCardStyleProps) => ( isFull ? theme.colors.blue_20 : isConfirmed ? theme.colors.green_20 : theme.colors.purple_20)};
 
   border-radius: 4px;
 `;
@@ -74,14 +75,20 @@ export const Icon = styled(PeopleIcon)`
 `;
 
 export const ConfirmButton = styled.TouchableOpacity`
-  width: 24px;
+  width: ${({isFull}) => isFull ? '100%' : '24px'};
   height: 24px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background-color: ${({ isConfirmed }: MatchCardStyleProps) => (!isConfirmed ? theme.colors.green : theme.colors.red)};
+  background-color: ${({ isFull, isConfirmed }: MatchCardStyleProps) => (isFull ? theme.colors.gray : !isConfirmed ? theme.colors.green : theme.colors.red)};
 
   border-radius: 12px;
+`;
+
+export const CompletedText = styled.Text`
+  font-family: ${theme.fonts.semiBold};
+  font-size: ${theme.fontSize.small};
+  color: ${theme.colors.dark_gray};
 `;

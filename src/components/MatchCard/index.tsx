@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Ionicons, Feather } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import {
@@ -12,6 +12,7 @@ import {
   LeftContainer,
   RightContainer,
   PeopleContainer,
+  CompletedText,
 } from './styles';
 import PopUp from '../PopUp';
 
@@ -21,13 +22,15 @@ interface MatchCardProps {
   plataform: string;
   date: string;
   length: number;
+  max_length: number;
 }
 
 export default function MatchCard({
-  id, title, plataform, date, length,
+  id, title, plataform, date, length, max_length,
 }: MatchCardProps) {
   const [confirm, setConfirm] = useState(false);
   const [showPopUp, setShowPopUp] = useState(false);
+  const [maxPlayers, setMaxPlayers] = useState(false);
 
   const router = useRouter();
 
@@ -36,8 +39,19 @@ export default function MatchCard({
     setShowPopUp(false);
   }
 
+  useEffect(() => {
+    if (length === max_length) {
+      setMaxPlayers(true);
+    }
+  }, [length, max_length])
+
   return (
-    <Container isConfirmed={confirm} activeOpacity={0.7} onPress={() => router.push(`/details/${id}`)}>
+    <Container
+      isConfirmed={confirm}
+      isFull={maxPlayers}
+      activeOpacity={0.7}
+      onPress={() => router.push(`/details/${id}`)}
+    >
       <LeftContainer>
         <Title>
           {title}
@@ -52,12 +66,20 @@ export default function MatchCard({
       <RightContainer>
         <ConfirmButton
           isConfirmed={confirm}
+          isFull={maxPlayers}
+          disabled={maxPlayers}
           onPress={() => (confirm ? setShowPopUp(true) : setConfirm(true))}
         >
-          {confirm ? (
-            <Feather name="x" size={18} color="black" />
+          {maxPlayers ? (
+            <CompletedText>
+              Cheia
+            </CompletedText>
           ) : (
-            <Ionicons name="checkmark-sharp" size={18} color="black" />
+            confirm ? (
+              <Feather name="x" size={18} color="black" />
+            ) : (
+              <Ionicons name="checkmark-sharp" size={18} color="black" />
+            )
           )}
         </ConfirmButton>
         <PeopleContainer>

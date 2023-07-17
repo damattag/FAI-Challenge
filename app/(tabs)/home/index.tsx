@@ -17,52 +17,59 @@ export default function Home({ username }: HomeProps) {
   const data = [
     {
       id: '1',
-      title: 'Title',
+      title: 'Minecraft',
       plataform: 'Discord',
-      date: 'Amanhã às 20:00',
-      length: 0,
+      date: '06/07/2023   |   19h',
+      players: 6,
+      max_players: 10,
     },
     {
       id: '2',
-      title: 'ai',
+      title: 'Guitar Hero',
       plataform: 'Discord',
-      date: 'Amanhã às 20:00',
-      length: 0,
+      date: '06/07/2023   |   19h',
+      players: 7,
+      max_players: 10,
     },
     {
       id: '3',
-      title: 'Title',
+      title: 'Gartic Phone',
       plataform: 'Discord',
-      date: 'Amanhã às 20:00',
-      length: 0,
+      date: '06/07/2023   |   19h',
+      players: 10,
+      max_players: 10,
     },
     {
       id: '4',
-      title: 'Title',
+      title: 'Gartic',
       plataform: 'Discord',
-      date: 'Amanhã às 20:00',
-      length: 0,
+      date: '06/07/2023   |   19h',
+      players: 1,
+      max_players: 10,
     },
     {
       id: '5',
-      title: 'Title',
+      title: 'Stardew Valley',
       plataform: 'Discord',
-      date: 'Amanhã às 20:00',
-      length: 0,
+      date: '06/07/2023   |   19h',
+      players: 3,
+      max_players: 10,
     },
     {
       id: '6',
-      title: 'Title',
+      title: 'FIFA',
       plataform: 'Discord',
-      date: 'Amanhã às 20:00',
-      length: 0,
+      date: '06/07/2023   |   19h',
+      players: 2,
+      max_players: 10,
     },
     {
       id: '7',
-      title: 'Title',
+      title: 'Payday 2',
       plataform: 'Discord',
-      date: 'Amanhã às 20:00',
-      length: 0,
+      date: '06/07/2023   |   19h',
+      players: 3,
+      max_players: 10,
     },
   ];
 
@@ -89,7 +96,8 @@ export default function Home({ username }: HomeProps) {
               title={item.title}
               plataform={item.plataform}
               date={item.date}
-              length={item.length}
+              length={item.players}
+              max_length={item.max_players}
             />
           )}
         />
